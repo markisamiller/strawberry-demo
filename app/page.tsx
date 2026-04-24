@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Gallery from "./components/Gallery";
 import PipelineViewer from "./components/PipelineViewer";
 import AboutModal from "./components/AboutModal";
+import ReportModal from "./components/ReportModal";
 import Header from "./components/Header";
 import type { DemoEntry } from "./types";
 
@@ -11,6 +12,7 @@ export default function Home() {
   const [entries, setEntries] = useState<DemoEntry[]>([]);
   const [selected, setSelected] = useState<DemoEntry | null>(null);
   const [showAbout, setShowAbout] = useState(false);
+  const [showReport, setShowReport] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen" style={{ background: "var(--bg)" }}>
-      <Header onAboutClick={() => setShowAbout(true)} />
+      <Header onAboutClick={() => setShowAbout(true)} onReportClick={() => setShowReport(true)} />
 
       {/* Hero */}
       <section className="px-6 pt-16 pb-10 text-center max-w-4xl mx-auto">
@@ -105,8 +107,11 @@ export default function Home() {
       {/* About modal */}
       {showAbout && <AboutModal onClose={() => setShowAbout(false)} />}
 
+      {/* Report modal */}
+      {showReport && <ReportModal onClose={() => setShowReport(false)} />}
+
       <footer className="text-center py-10 text-xs" style={{ color: "var(--muted)", borderTop: "1px solid var(--border)" }}>
-        Mark Miller · AIDA 2158 Final Project · Red Deer Polytechnic · 2026
+        Mark Miller · Kelsey Biberdorf · Herve Junior · AIDA 2158 Final Project · Red Deer Polytechnic · 2026
       </footer>
     </main>
   );
