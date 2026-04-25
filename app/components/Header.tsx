@@ -11,7 +11,7 @@ const GH_ICON = (
 const TEAM_REPOS = [
   { name: "Mark Miller", href: "https://github.com/markisamiller/aida2158-final-project" },
   { name: "Kelsey Biberdorf", href: "https://github.com/kbiberdorf/AIDA-2158-Final-Project" },
-  { name: "Herve Junior", href: "" },
+  { name: "Herve Junior", href: "https://github.com/Herve1320/Project_AIDA2158" },
 ];
 
 export default function Header({
